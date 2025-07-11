@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bole 3G Cafe & Shisha Lounge - Digital Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .hero-bg {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    
+    .glow {
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .cart-badge {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .gradient-text {
+      background: linear-gradient(45deg, #fbbf24, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .modal {
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .notification {
+      animation: slideIn 0.5s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Navigation -->
+  <nav class="bg-black/90 backdrop-blur-sm p-4 fixed w-full top-0 z-50 shadow-2xl">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <i class="fas fa-smoking text-yellow-400 text-2xl"></i>
+        <span class="text-xl font-bold gradient-text">Bole 3G</span>
+      </div>
+      
+      <div class="hidden md:flex space-x-8 text-sm font-semibold">
+        <a href="#hero" class="hover:text-yellow-400 transition-colors">Home</a>
+        <a href="#softdrinks" class="hover:text-yellow-400 transition-colors">Softdrinks</a>
+        <a href="#heissgetraenke" class="hover:text-yellow-400 transition-colors">Heißgetränke</a>
+        <a href="#cocktails" class="hover:text-yellow-400 transition-colors">Cocktails</a>
+        <a href="#shots" class="hover:text-yellow-400 transition-colors">Shots & Longdrinks</a>
+        <a href="#bierwein" class="hover:text-yellow-400 transition-colors">Bier & Wein</a>
+        <a href="#shisha" class="hover:text-yellow-400 transition-colors">Shisha</a>
+      </div>
+      
+      <div class="flex items-center space-x-4">
+        <button id="searchBtn" class="hover:text-yellow-400 transition-colors">
+          <i class="fas fa-search"></i>
+        </button>
+        <button id="cartBtn" class="relative hover:text-yellow-400 transition-colors">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden cart-badge">0</span>
+        </button>
+        <button id="mobileMenuBtn" class="md:hidden">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-black/95 mt-4 p-4 rounded-lg">
+      <a href="#hero" class="block py-2 hover:text-yellow-400 transition-colors">Home</a>
+      <a href="#softdrinks" class="block py-2 hover:text-yellow-400 transition-colors">Softdrinks</a>
+      <a href="#heissgetraenke" class="block py-2 hover:text-yellow-400 transition-colors">Heißgetränke</a>
+      <a href="#cocktails" class="block py-2 hover:text-yellow-400 transition-colors">Cocktails</a>
+      <a href="#shots" class="block py-2 hover:text-yellow-400 transition-colors">Shots & Longdrinks</a>
+      <a href="#bierwein" class="block py-2 hover:text-yellow-400 transition-colors">Bier & Wein</a>
+      <a href="#shisha" class="block py-2 hover:text-yellow-400 transition-colors">Shisha</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 text-center fade-in">
+      <h1 class="text-6xl md:text-8xl font-bold mb-6 gradient-text">Bole 3G</h1>
+      <p class="text-xl md:text-2xl mb-8 text-gray-300">Cafe & Shisha Lounge</p>
+      <p class="text-lg mb-8 max-w-2xl mx-auto text-gray-400">Erleben Sie authentische äthiopische Gastfreundschaft in entspannter Atmosphäre</p>
+      <a href="#softdrinks" class="bg-yellow-500 text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-400 transition-all inline-flex items-center space-x-2 glow">
+        <i class="fas fa-utensils"></i>
+        <span>Menü entdecken</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Search Modal -->
+  <div id="searchModal" class="fixed inset-0 modal hidden items-center justify-center z-50">
+    <div class="bg-gray-800 rounded-lg p-6 max-w-md w-full mx-4">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl font-bold">Suche</h3>
+        <button id="closeSearch" class="text-gray-400 hover:text-white">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <input type="text" id="searchInput" placeholder="Getränk oder Shisha suchen..." class="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+      <div id="searchResults" class="mt-4 max-h-60 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="fixed inset-0 modal hidden items-center justify-center z-50">
+    <div class="bg-gray-800 rounded-lg p-6 max-w-md w-full mx-4">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl font-bold">Warenkorb</h3>
+        <button id="closeCart" class="text-gray-400 hover:text-white">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="cartItems" class="space-y-2 max-h-60 overflow-y-auto"></div>
+      <div class="border-t border-gray-600 pt-4 mt-4">
+        <div class="flex justify-between items-center mb-4">
+          <span class="font-bold">Gesamt:</span>
+          <span id="cartTotal" class="font-bold text-yellow-400">€0.00</span>
+        </div>
+        <button id="checkoutBtn" class="w-full bg-yellow-500 text-black py-2 rounded-lg font-bold hover:bg-yellow-400 transition-colors">
+          Zur Kasse
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification -->
+  <div id="notification" class="fixed top-20 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg hidden notification">
+    <i class="fas fa-check-circle mr-2"></i>
+    <span id="notificationText">Artikel hinzugefügt!</span>
+  </div>
+
+  <main class="space-y-16 pt-24">
+    <!-- Softdrinks Section -->
+    <section id="softdrinks" class="relative min-h-screen bg-gray-800">
+      <div class="max-w-7xl mx-auto p-8">
+        <h2 class="text-4xl font-bold border-b border-yellow-400 pb-2 mb-8 text-center fade-in">
+          <i class="fas fa-glass-water mr-4"></i>
+          Alkoholfreie Getränke
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Red_Bull_energy_drink_-_photographed_by_Greg_Gorman.jpg/640px-Red_Bull_energy_drink_-_photographed_by_Greg_Gorman.jpg" alt="Red Bull" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Red Bull</h3>
+              <p class="text-gray-400 text-sm mb-3">Klassischer Energy-Drink</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€3.00</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Red Bull" data-price="3.00">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <img src="https://www.rossmann.de/resource/image/4625962/portrait_ratio1x1/600/600/f1178b1ce4f6b6c24e236f4a5c4d0b6a/E678ADE0A1A49825DC96B35B8D3AE1C7/red-bull-energy-drink-white-edition-kokos-blaubeere.jpg" alt="Red Bull Kokos Blaubeere" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Red Bull Kokos Blaubeere</h3>
+              <p class="text-gray-400 text-sm mb-3">Exotische Geschmacksrichtung</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€3.00</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Red Bull Kokos Blaubeere" data-price="3.00">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <img src="https://cdn.shopify.com/s/files/1/0612/7929/3992/products/maloko_600x.jpg?v=1657306437" alt="Maloko" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Maloko</h3>
+              <p class="text-gray-400 text-sm mb-3">Premium Energy-Drink</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€4.90</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Maloko" data-price="4.90">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center">
+              <i class="fas fa-tint text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Wasser</h3>
+              <p class="text-gray-400 text-sm mb-3">Stilles oder prickelnd</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€2.50</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Wasser" data-price="2.50">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heißgetränke Section -->
+    <section id="heissgetraenke" class="relative min-h-screen bg-gray-900">
+      <div class="max-w-7xl mx-auto p-8">
+        <h2 class="text-4xl font-bold border-b border-yellow-400 pb-2 mb-8 text-center fade-in">
+          <i class="fas fa-coffee mr-4"></i>
+          Heißgetränke
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-amber-600 to-amber-800 h-48 flex items-center justify-center">
+              <i class="fas fa-coffee text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Äthiopischer Kaffee</h3>
+              <p class="text-gray-400 text-sm mb-3">Traditionell zubereitet</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€3.50</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Äthiopischer Kaffee" data-price="3.50">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-green-600 to-green-800 h-48 flex items-center justify-center">
+              <i class="fas fa-leaf text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Tee</h3>
+              <p class="text-gray-400 text-sm mb-3">Verschiedene Sorten</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€2.80</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Tee" data-price="2.80">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cocktails Section -->
+    <section id="cocktails" class="relative min-h-screen bg-gray-800">
+      <div class="max-w-7xl mx-auto p-8">
+        <h2 class="text-4xl font-bold border-b border-yellow-400 pb-2 mb-8 text-center fade-in">
+          <i class="fas fa-cocktail mr-4"></i>
+          Cocktails
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-pink-500 to-red-600 h-48 flex items-center justify-center">
+              <i class="fas fa-cocktail text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Mojito</h3>
+              <p class="text-gray-400 text-sm mb-3">Erfrischend mit Minze</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€7.50</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Mojito" data-price="7.50">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-orange-500 to-red-600 h-48 flex items-center justify-center">
+              <i class="fas fa-glass-martini text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Tequila Sunrise</h3>
+              <p class="text-gray-400 text-sm mb-3">Klassischer Sonnenaufgang</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€8.00</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Tequila Sunrise" data-price="8.00">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shots & Longdrinks Section -->
+    <section id="shots" class="relative min-h-screen bg-gray-900">
+      <div class="max-w-7xl mx-auto p-8">
+        <h2 class="text-4xl font-bold border-b border-yellow-400 pb-2 mb-8 text-center fade-in">
+          <i class="fas fa-shot-glass mr-4"></i>
+          Shots & Longdrinks
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-red-500 to-red-700 h-48 flex items-center justify-center">
+              <i class="fas fa-fire text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Vodka Shot</h3>
+              <p class="text-gray-400 text-sm mb-3">Premium Vodka</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€3.00</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Vodka Shot" data-price="3.00">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bier & Wein Section -->
+    <section id="bierwein" class="relative min-h-screen bg-gray-800">
+      <div class="max-w-7xl mx-auto p-8">
+        <h2 class="text-4xl font-bold border-b border-yellow-400 pb-2 mb-8 text-center fade-in">
+          <i class="fas fa-beer mr-4"></i>
+          Bier & Wein
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-yellow-600 to-yellow-800 h-48 flex items-center justify-center">
+              <i class="fas fa-beer text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Bier 0,5L</h3>
+              <p class="text-gray-400 text-sm mb-3">Verschiedene Sorten</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€4.50</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Bier 0,5L" data-price="4.50">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-purple-600 to-purple-800 h-48 flex items-center justify-center">
+              <i class="fas fa-wine-glass text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Rotwein</h3>
+              <p class="text-gray-400 text-sm mb-3">Auswahl verschiedener Weine</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€5.50</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Rotwein" data-price="5.50">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shisha Section -->
+    <section id="shisha" class="relative min-h-screen bg-gray-900">
+      <div class="max-w-7xl mx-auto p-8">
+        <h2 class="text-4xl font-bold border-b border-yellow-400 pb-2 mb-8 text-center fade-in">
+          <i class="fas fa-smoking mr-4"></i>
+          Shisha
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-teal-500 to-teal-700 h-48 flex items-center justify-center">
+              <i class="fas fa-smoking text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Klassische Shisha</h3>
+              <p class="text-gray-400 text-sm mb-3">Verschiedene Geschmacksrichtungen</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€12.00</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Klassische Shisha" data-price="12.00">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+            <div class="bg-gradient-to-br from-indigo-500 to-indigo-700 h-48 flex items-center justify-center">
+              <i class="fas fa-star text-white text-6xl"></i>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Premium Shisha</h3>
+              <p class="text-gray-400 text-sm mb-3">Hochwertige Tabaksorten</p>
+              <div class="flex justify-between items-center">
+                <span class="text-yellow-400 font-bold text-lg">€15.00</span>
+                <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                        data-name="Premium Shisha" data-price="15.00">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 gradient-text">Kontakt</h3>
+          <p class="text-gray-400">
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            Musterstraße 123, 12345 Musterstadt
+          </p>
+          <p class="text-gray-400">
+            <i class="fas fa-phone mr-2"></i>
+            +49 123 456789
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4 gradient-text">Öffnungszeiten</h3>
+          <p class="text-gray-400">Mo-So: 16:00 - 02:00</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4 gradient-text">Folgen Sie uns</h3>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+              <i class="fab fa-facebook-f text-2xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+              <i class="fab fa-instagram text-2xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8">
+        <p class="text-gray-400 text-sm">© 2025 Bole 3G Cafe & Shisha Lounge – All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Cart functionality
+    let cart = [];
+    let cartTotal = 0;
+
+    // Menu items database with real Google images
+    const menuItems = [
+      // Softdrinks
+      { name: "Red Bull", price: 3.00, category: "softdrinks", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop" },
+      { name: "Red Bull Kokos Blaubeere", price: 3.00, category: "softdrinks", image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop" },
+      { name: "Maloko", price: 4.90, category: "softdrinks", image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&h=300&fit=crop" },
+      { name: "Wasser", price: 2.50, category: "softdrinks", image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&h=300&fit=crop" },
+      { name: "Coca Cola", price: 2.80, category: "softdrinks", image: "https://images.unsplash.com/photo-1561758033-48d52648ae8b?w=400&h=300&fit=crop" },
+      { name: "Sprite", price: 2.80, category: "softdrinks", image: "https://images.unsplash.com/photo-1625740463580-6267b3e95b91?w=400&h=300&fit=crop" },
+      { name: "Orangensaft", price: 3.20, category: "softdrinks", image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=300&fit=crop" },
+      { name: "Apfelsaft", price: 3.20, category: "softdrinks", image: "https://images.unsplash.com/photo-1560781290-7dc94c0f8f4f?w=400&h=300&fit=crop" },
+      
+      // Heißgetränke
+      { name: "Äthiopischer Kaffee", price: 3.50, category: "heissgetraenke", image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=400&h=300&fit=crop" },
+      { name: "Tee", price: 2.80, category: "heissgetraenke", image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop" },
+      { name: "Cappuccino", price: 3.20, category: "heissgetraenke", image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop" },
+      { name: "Espresso", price: 2.50, category: "heissgetraenke", image: "https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=400&h=300&fit=crop" },
+      { name: "Latte Macchiato", price: 3.80, category: "heissgetraenke", image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&h=300&fit=crop" },
+      { name: "Heisse Schokolade", price: 3.50, category: "heissgetraenke", image: "https://images.unsplash.com/photo-1542990253-a781e04c0082?w=400&h=300&fit=crop" },
+      
+      // Cocktails
+      { name: "Mojito", price: 7.50, category: "cocktails", image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&fit=crop" },
+      { name: "Tequila Sunrise", price: 8.00, category: "cocktails", image: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=400&h=300&fit=crop" },
+      { name: "Piña Colada", price: 8.50, category: "cocktails", image: "https://images.unsplash.com/photo-1546171753-97d7676e4602?w=400&h=300&fit=crop" },
+      { name: "Cosmopolitan", price: 7.80, category: "cocktails", image: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&h=300&fit=crop" },
+      { name: "Long Island Iced Tea", price: 9.00, category: "cocktails", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop" },
+      { name: "Caipirinha", price: 7.00, category: "cocktails", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop" },
+      
+      // Shots & Longdrinks
+      { name: "Vodka Shot", price: 3.00, category: "shots", image: "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=400&h=300&fit=crop" },
+      { name: "Tequila Shot", price: 3.50, category: "shots", image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=400&h=300&fit=crop" },
+      { name: "Whiskey Shot", price: 4.00, category: "shots", image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=400&h=300&fit=crop" },
+      { name: "Vodka Lemon", price: 6.50, category: "shots", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop" },
+      { name: "Gin Tonic", price: 7.00, category: "shots", image: "https://images.unsplash.com/photo-1541601428585-9e09fcabb8c1?w=400&h=300&fit=crop" },
+      { name: "Rum Cola", price: 6.00, category: "shots", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop" },
+      
+      // Bier & Wein
+      { name: "Bier 0,5L", price: 4.50, category: "bierwein", image: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400&h=300&fit=crop" },
+      { name: "Rotwein", price: 5.50, category: "bierwein", image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=400&h=300&fit=crop" },
+      { name: "Weißwein", price: 5.50, category: "bierwein", image: "https://images.unsplash.com/photo-1586370434639-0fe43b2d32d6?w=400&h=300&fit=crop" },
+      { name: "Weizenbier", price: 4.80, category: "bierwein", image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=400&h=300&fit=crop" },
+      { name: "Pils", price: 4.20, category: "bierwein", image: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400&h=300&fit=crop" },
+      
+      // Shisha
+      { name: "Klassische Shisha", price: 12.00, category: "shisha", image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop" },
+      { name: "Premium Shisha", price: 15.00, category: "shisha", image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop" },
+      { name: "Frucht Shisha", price: 13.50, category: "shisha", image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop" },
+      { name: "Minze Shisha", price: 12.50, category: "shisha", image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop" },
+      { name: "Doppel Apfel Shisha", price: 14.00, category: "shisha", image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop" }
+    ];
+
+    // DOM elements
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchModal = document.getElementById('searchModal');
+    const closeSearch = document.getElementById('closeSearch');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    const cartBtn = document.getElementById('cartBtn');
+    const cartModal = document.getElementById('cartModal');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const cartCount = document.getElementById('cartCount');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const notification = document.getElementById('notification');
+    const notificationText = document.getElementById('notificationText');
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      generateMenuItems();
+      setupEventListeners();
+      updateCartUI();
+    });
+
+    // Generate menu items dynamically
+    function generateMenuItems() {
+      const sections = {
+        'softdrinks': document.querySelector('#softdrinks .grid'),
+        'heissgetraenke': document.querySelector('#heissgetraenke .grid'),
+        'cocktails': document.querySelector('#cocktails .grid'),
+        'shots': document.querySelector('#shots .grid'),
+        'bierwein': document.querySelector('#bierwein .grid'),
+        'shisha': document.querySelector('#shisha .grid')
+      };
+
+      // Clear existing items
+      Object.values(sections).forEach(section => {
+        if (section) section.innerHTML = '';
+      });
+
+      // Group items by category
+      const itemsByCategory = menuItems.reduce((acc, item) => {
+        if (!acc[item.category]) acc[item.category] = [];
+        acc[item.category].push(item);
+        return acc;
+      }, {});
+
+      // Generate HTML for each category
+      Object.entries(itemsByCategory).forEach(([category, items]) => {
+        const section = sections[category];
+        if (!section) return;
+
+        items.forEach(item => {
+          const itemHTML = `
+            <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover">
+              <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover" loading="lazy">
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">${item.name}</h3>
+                <p class="text-gray-400 text-sm mb-3">${getItemDescription(item.name)}</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-yellow-400 font-bold text-lg">€${item.price.toFixed(2)}</span>
+                  <button class="add-to-cart bg-yellow-500 text-black px-3 py-1 rounded-full text-sm hover:bg-yellow-400 transition-colors" 
+                          data-name="${item.name}" data-price="${item.price}">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+          section.innerHTML += itemHTML;
+        });
+      });
+
+      // Re-attach event listeners for new buttons
+      attachAddToCartListeners();
+    }
+
+    // Get item descriptions
+    function getItemDescription(itemName) {
+      const descriptions = {
+        'Red Bull': 'Klassischer Energy-Drink',
+        'Red Bull Kokos Blaubeere': 'Exotische Geschmacksrichtung',
+        'Maloko': 'Premium Energy-Drink',
+        'Wasser': 'Stilles oder prickelnd',
+        'Coca Cola': 'Erfrischend und klassisch',
+        'Sprite': 'Zitronenfrisch',
+        'Orangensaft': 'Frisch gepresst',
+        'Apfelsaft': 'Naturtrüb',
+        'Äthiopischer Kaffee': 'Traditionell zubereitet',
+        'Tee': 'Verschiedene Sorten',
+        'Cappuccino': 'Cremig und aromatisch',
+        'Espresso': 'Stark und intensiv',
+        'Latte Macchiato': 'Mild und cremig',
+        'Heisse Schokolade': 'Cremig und süß',
+        'Mojito': 'Erfrischend mit Minze',
+        'Tequila Sunrise': 'Klassischer Sonnenaufgang',
+        'Piña Colada': 'Tropisch und cremig',
+        'Cosmopolitan': 'Elegant und fruchtig',
+        'Long Island Iced Tea': 'Stark und erfrischend',
+        'Caipirinha': 'Brasilianischer Klassiker',
+        'Vodka Shot': 'Premium Vodka',
+        'Tequila Shot': 'Authentisch mexikanisch',
+        'Whiskey Shot': 'Hochwertig und rein',
+        'Vodka Lemon': 'Erfrischend und klassisch',
+        'Gin Tonic': 'Britischer Klassiker',
+        'Rum Cola': 'Süß und erfrischend',
+        'Bier 0,5L': 'Verschiedene Sorten',
+        'Rotwein': 'Auswahl verschiedener Weine',
+        'Weißwein': 'Frisch und fruchtig',
+        'Weizenbier': 'Bayrische Spezialität',
+        'Pils': 'Hopfig und herb',
+        'Klassische Shisha': 'Verschiedene Geschmacksrichtungen',
+        'Premium Shisha': 'Hochwertige Tabaksorten',
+        'Frucht Shisha': 'Fruchtige Aromen',
+        'Minze Shisha': 'Erfrischend kühl',
+        'Doppel Apfel Shisha': 'Süß und aromatisch'
+      };
+      return descriptions[itemName] || 'Köstliche Auswahl';
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+      // Mobile menu
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Search functionality
+      searchBtn.addEventListener('click', () => {
+        searchModal.classList.remove('hidden');
+        searchModal.classList.add('flex');
+        searchInput.focus();
+      });
+
+      closeSearch.addEventListener('click', () => {
+        searchModal.classList.add('hidden');
+        searchModal.classList.remove('flex');
+        searchInput.value = '';
+        searchResults.innerHTML = '';
+      });
+
+      searchInput.addEventListener('input', handleSearch);
+
+      // Cart functionality
+      cartBtn.addEventListener('click', () => {
+        cartModal.classList.remove('hidden');
+        cartModal.classList.add('flex');
+      });
+
+      closeCart.addEventListener('click', () => {
+        cartModal.classList.add('hidden');
+        cartModal.classList.remove('flex');
+      });
+
+      // Checkout
+      checkoutBtn.addEventListener('click', handleCheckout);
+
+      // Close modals on outside click
+      [searchModal, cartModal].forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+          }
+        });
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+          // Close mobile menu if open
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Attach event listeners to add-to-cart buttons
+    function attachAddToCartListeners() {
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+          const name = this.getAttribute('data-name');
+          const price = parseFloat(this.getAttribute('data-price'));
+          addToCart(name, price);
+        });
+      });
+    }
+
+    // Search functionality
+    function handleSearch() {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResults.innerHTML = '';
+
+      if (query.length < 2) return;
+
+      const results = menuItems.filter(item => 
+        item.name.toLowerCase().includes(query)
+      );
+
+      if (results.length === 0) {
+        searchResults.innerHTML = '<p class="text-gray-400 text-center py-4">Keine Ergebnisse gefunden</p>';
+        return;
+      }
+
+      results.forEach(item => {
+        const resultHTML = `
+          <div class="flex items-center space-x-4 p-2 hover:bg-gray-700 rounded-lg cursor-pointer">
+            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded">
+            <div class="flex-1">
+              <h4 class="font-semibold">${item.name}</h4>
+              <p class="text-yellow-400 text-sm">€${item.price.toFixed(2)}</p>
+            </div>
+            <button class="add-to-cart bg-yellow-500 text-black px-2 py-1 rounded text-sm hover:bg-yellow-400 transition-colors" 
+                    data-name="${item.name}" data-price="${item.price}">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        `;
+        searchResults.innerHTML += resultHTML;
+      });
+
+      // Attach listeners to search result buttons
+      searchResults.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+          const name = this.getAttribute('data-name');
+          const price = parseFloat(this.getAttribute('data-price'));
+          addToCart(name, price);
+        });
+      });
+    }
+
+    // Cart functionality
+    function addToCart(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          name: name,
+          price: price,
+          quantity: 1
+        });
+      }
+
+      updateCartUI();
+      showNotification(`${name} wurde hinzugefügt!`);
+    }
+
+    function removeFromCart(name) {
+      cart = cart.filter(item => item.name !== name);
+      updateCartUI();
+      showNotification('Artikel entfernt!', 'removed');
+    }
+
+    function updateQuantity(name, change) {
+      const item = cart.find(item => item.name === name);
+      if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+          removeFromCart(name);
+        } else {
+          updateCartUI();
+        }
+      }
+    }
+
+    function updateCartUI() {
+      // Update cart count
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCount.textContent = totalItems;
+      cartCount.classList.toggle('hidden', totalItems === 0);
+
+      // Update cart total
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      cartTotal.textContent = `€${total.toFixed(2)}`;
+
+      // Update cart items
+      cartItems.innerHTML = '';
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="text-gray-400 text-center py-4">Warenkorb ist leer</p>';
+        checkoutBtn.disabled = true;
+        checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        return;
+      }
+
+      checkoutBtn.disabled = false;
+      checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+      cart.forEach(item => {
+        const itemHTML = `
+          <div class="flex items-center justify-between p-2 bg-gray-700 rounded-lg">
+            <div class="flex-1">
+              <h4 class="font-semibold">${item.name}</h4>
+              <p class="text-yellow-400 text-sm">€${item.price.toFixed(2)}</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <button onclick="updateQuantity('${item.name}', -1)" class="bg-gray-600 text-white w-6 h-6 rounded-full flex items-center justify-center hover:bg-gray-500">
+                <i class="fas fa-minus text-xs"></i>
+              </button>
+              <span class="w-8 text-center">${item.quantity}</span>
+              <button onclick="updateQuantity('${item.name}', 1)" class="bg-gray-600 text-white w-6 h-6 rounded-full flex items-center justify-center hover:bg-gray-500">
+                <i class="fas fa-plus text-xs"></i>
+              </button>
+              <button onclick="removeFromCart('${item.name}')" class="text-red-400 hover:text-red-300 ml-2">
+                <i class="fas fa-trash text-sm"></i>
+              </button>
+            </div>
+          </div>
+        `;
+        cartItems.innerHTML += itemHTML;
+      });
+    }
+
+    // Checkout functionality
+    function handleCheckout() {
+      if (cart.length === 0) return;
+
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const orderSummary = cart.map(item => 
+        `${item.quantity}x ${item.name} - €${(item.price * item.quantity).toFixed(2)}`
+      ).join('\\n');
+
+      alert(`Bestellung aufgegeben!\\n\\n${orderSummary}\\n\\nGesamtsumme: €${total.toFixed(2)}\\n\\nVielen Dank für Ihre Bestellung!`);
+      
+      // Clear cart
+      cart = [];
+      updateCartUI();
+      
+      // Close modal
+      cartModal.classList.add('hidden');
+      cartModal.classList.remove('flex');
+    }
+
+    // Notification system
+    function showNotification(message, type = 'success') {
+      notificationText.textContent = message;
+      notification.classList.remove('hidden');
+      notification.classList.toggle('bg-green-500', type === 'success');
+      notification.classList.toggle('bg-red-500', type === 'removed');
+      
+      setTimeout(() => {
+        notification.classList.add('hidden');
+      }, 3000);
+    }
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Make functions globally available
+    window.updateQuantity = updateQuantity;
+    window.removeFromCart = removeFromCart;
+  </script>
