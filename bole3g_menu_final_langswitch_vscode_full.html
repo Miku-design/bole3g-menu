@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   BOLE-3G Menu
+  </title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem;
+    }
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .category {
+      border-top: 2px solid #ccc;
+      padding-top: 1rem;
+    }
+    .category h2 {
+      margin-bottom: 1rem;
+    }
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .card {
+      flex: 1 1 200px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #f9f9f9;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    .dark-mode .card {
+      background: #1e1e1e;
+      border-color: #444;
+    }
+    .dark-mode header {
+      background: #000;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  </style>
+ </head>
+ <body>
+  <header>
+   <h1>
+    BOLE-3G CAFE SHISHA &amp; LOUNGE MENU
+   </h1>
+  </header>
+  <div class="controls">
+   <button onclick="toggleDarkMode()">
+    🌙 Toggle Dark Mode
+   </button>
+   <button onclick="switchLanguage()">
+    🌐 Switch Language
+   </button>
+  </div>
+  <div class="menu-container">
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+     <div class="card" data-de="WEL" data-en="WEL">
+      <img alt="WEL" src="https://via.placeholder.com/300x120?text=WEL"/>
+      <h3 class="item-name">
+       WEL
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="TO" data-en="TO">
+      <img alt="TO" src="https://via.placeholder.com/300x120?text=TO"/>
+      <h3 class="item-name">
+       TO
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="COME" data-en="COME">
+      <img alt="COME" src="https://via.placeholder.com/300x120?text=COME"/>
+      <h3 class="item-name">
+       COME
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="BOLE-3G CAFE" data-en="BOLE-3G CAFE">
+      <img alt="BOLE-3G CAFE" src="https://via.placeholder.com/300x120?text=BOLE-3G+CAFE"/>
+      <h3 class="item-name">
+       BOLE-3G CAFE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+    </div>
+   </div>
+   <div class="category" data-de="Alkholfreie Getränke" data-en="Alkholfreie Getränke">
+    <h2 class="cat-title">
+     Alkholfreie Getränke
+    </h2>
+    <div class="items">
+     <div class="card" data-de="RED BULL" data-en="RED BULL">
+      <img alt="RED BULL" src="https://via.placeholder.com/300x120?text=RED+BULL"/>
+      <h3 class="item-name">
+       RED BULL
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="RED BULL SUGARFREE" data-en="RED BULL SUGARFREE">
+      <img alt="RED BULL SUGARFREE" src="https://via.placeholder.com/300x120?text=RED+BULL+SUGARFREE"/>
+      <h3 class="item-name">
+       RED BULL SUGARFREE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="RED BULL KOKOS BLAUBEERE/ W" data-en="RED BULL KOKOS BLAUBEERE/ W">
+      <img alt="RED BULL KOKOS BLAUBEERE/ W" src="https://via.placeholder.com/300x120?text=RED+BULL+KOKOS+BLAUBEERE/+W"/>
+      <h3 class="item-name">
+       RED BULL KOKOS BLAUBEERE/ W
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Melone" data-en="Melone">
+      <img alt="Melone" src="https://via.placeholder.com/300x120?text=Melone"/>
+      <h3 class="item-name">
+       Melone
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Acai" data-en="Acai">
+      <img alt="Acai" src="https://via.placeholder.com/300x120?text=Acai"/>
+      <h3 class="item-name">
+       Acai
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="WHITE COLUMBIA" data-en="WHITE COLUMBIA">
+      <img alt="WHITE COLUMBIA" src="https://via.placeholder.com/300x120?text=WHITE+COLUMBIA"/>
+      <h3 class="item-name">
+       WHITE COLUMBIA
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Blueberry, Mango, Traube Minze" data-en="Blueberry, Mango, Traube Minze">
+      <img alt="Blueberry, Mango, Traube Minze" src="https://via.placeholder.com/300x120?text=Blueberry,+Mango,+Traube+Minze"/>
+      <h3 class="item-name">
+       Blueberry, Mango, Traube Minze
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Maloko" data-en="Maloko">
+      <img alt="Maloko" src="https://via.placeholder.com/300x120?text=Maloko"/>
+      <h3 class="item-name">
+       Maloko
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="SÄFTE" data-en="SÄFTE">
+      <img alt="SÄFTE" src="https://via.placeholder.com/300x120?text=SÄFTE"/>
+      <h3 class="item-name">
+       SÄFTE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Schorlen" data-en="Schorlen">
+      <img alt="Schorlen" src="https://via.placeholder.com/300x120?text=Schorlen"/>
+      <h3 class="item-name">
+       Schorlen
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Apfel, Kirsche, Ananas, Osaft," data-en="Apfel, Kirsche, Ananas, Osaft,">
+      <img alt="Apfel, Kirsche, Ananas, Osaft," src="https://via.placeholder.com/300x120?text=Apfel,+Kirsche,+Ananas,+Osaft,"/>
+      <h3 class="item-name">
+       Apfel, Kirsche, Ananas, Osaft,
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Maracuja, Banane, Kiba Arizona" data-en="Maracuja, Banane, Kiba Arizona">
+      <img alt="Maracuja, Banane, Kiba Arizona" src="https://via.placeholder.com/300x120?text=Maracuja,+Banane,+Kiba+Arizona"/>
+      <h3 class="item-name">
+       Maracuja, Banane, Kiba Arizona
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Ice Tea" data-en="Ice Tea">
+      <img alt="Ice Tea" src="https://via.placeholder.com/300x120?text=Ice+Tea"/>
+      <h3 class="item-name">
+       Ice Tea
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,4" data-en="0,4">
+      <img alt="0,4" src="https://via.placeholder.com/300x120?text=0,4"/>
+      <h3 class="item-name">
+       0,4
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,4" data-en="0,4">
+      <img alt="0,4" src="https://via.placeholder.com/300x120?text=0,4"/>
+      <h3 class="item-name">
+       0,4
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Lemon, peach, Watermelon, Pomegranate" data-en="Lemon, peach, Watermelon, Pomegranate">
+      <img alt="Lemon, peach, Watermelon, Pomegranate" src="https://via.placeholder.com/300x120?text=Lemon,+peach,+Watermelon,+Pomegranate"/>
+      <h3 class="item-name">
+       Lemon, peach, Watermelon, Pomegranate
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="$4.90" data-en="$4.90">
+      <img alt="$4.90" src="https://via.placeholder.com/300x120?text=$4.90"/>
+      <h3 class="item-name">
+       $4.90
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="$4.90" data-en="$4.90">
+      <img alt="$4.90" src="https://via.placeholder.com/300x120?text=$4.90"/>
+      <h3 class="item-name">
+       $4.90
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,25" data-en="0,25">
+      <img alt="0,25" src="https://via.placeholder.com/300x120?text=0,25"/>
+      <h3 class="item-name">
+       0,25
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,4" data-en="0,4">
+      <img alt="0,4" src="https://via.placeholder.com/300x120?text=0,4"/>
+      <h3 class="item-name">
+       0,4
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,4" data-en="0,4">
+      <img alt="0,4" src="https://via.placeholder.com/300x120?text=0,4"/>
+      <h3 class="item-name">
+       0,4
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Game and softdrink" data-en="Game and softdrink">
+      <img alt="Game and softdrink" src="https://via.placeholder.com/300x120?text=Game+and+softdrink"/>
+      <h3 class="item-name">
+       Game and softdrink
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="SOFTDRINK" data-en="SOFTDRINK">
+      <img alt="SOFTDRINK" src="https://via.placeholder.com/300x120?text=SOFTDRINK"/>
+      <h3 class="item-name">
+       SOFTDRINK
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="S" data-en="S">
+      <img alt="S" src="https://via.placeholder.com/300x120?text=S"/>
+      <h3 class="item-name">
+       S
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Spiele" data-en="Spiele">
+      <img alt="Spiele" src="https://via.placeholder.com/300x120?text=Spiele"/>
+      <h3 class="item-name">
+       Spiele
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Billard 1 Stunde" data-en="Billard 1 Stunde">
+      <img alt="Billard 1 Stunde" src="https://via.placeholder.com/300x120?text=Billard+1+Stunde"/>
+      <h3 class="item-name">
+       Billard 1 Stunde
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="cola" data-en="cola">
+      <img alt="cola" src="https://via.placeholder.com/300x120?text=cola"/>
+      <h3 class="item-name">
+       cola
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Fanta" data-en="Fanta">
+      <img alt="Fanta" src="https://via.placeholder.com/300x120?text=Fanta"/>
+      <h3 class="item-name">
+       Fanta
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Sprite" data-en="Sprite">
+      <img alt="Sprite" src="https://via.placeholder.com/300x120?text=Sprite"/>
+      <h3 class="item-name">
+       Sprite
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,2l" data-en="0,2l">
+      <img alt="0,2l" src="https://via.placeholder.com/300x120?text=0,2l"/>
+      <h3 class="item-name">
+       0,2l
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,2l" data-en="0,2l">
+      <img alt="0,2l" src="https://via.placeholder.com/300x120?text=0,2l"/>
+      <h3 class="item-name">
+       0,2l
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,2l" data-en="0,2l">
+      <img alt="0,2l" src="https://via.placeholder.com/300x120?text=0,2l"/>
+      <h3 class="item-name">
+       0,2l
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Billard 30 Minuten" data-en="Billard 30 Minuten">
+      <img alt="Billard 30 Minuten" src="https://via.placeholder.com/300x120?text=Billard+30+Minuten"/>
+      <h3 class="item-name">
+       Billard 30 Minuten
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Bole 3G cafe" data-en="Bole 3G cafe">
+      <img alt="Bole 3G cafe" src="https://via.placeholder.com/300x120?text=Bole+3G+cafe"/>
+      <h3 class="item-name">
+       Bole 3G cafe
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+    </div>
+   </div>
+   <div class="category" data-de="Heisse Getränke" data-en="Heisse Getränke">
+    <h2 class="cat-title">
+     Heisse Getränke
+    </h2>
+    <div class="items">
+     <div class="card" data-de="ESPRESSO" data-en="ESPRESSO">
+      <img alt="ESPRESSO" src="https://via.placeholder.com/300x120?text=ESPRESSO"/>
+      <h3 class="item-name">
+       ESPRESSO
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="ESPRESSO-DOPPIO" data-en="ESPRESSO-DOPPIO">
+      <img alt="ESPRESSO-DOPPIO" src="https://via.placeholder.com/300x120?text=ESPRESSO-DOPPIO"/>
+      <h3 class="item-name">
+       ESPRESSO-DOPPIO
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="KAFFEE" data-en="KAFFEE">
+      <img alt="KAFFEE" src="https://via.placeholder.com/300x120?text=KAFFEE"/>
+      <h3 class="item-name">
+       KAFFEE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="CAPPUCCINO" data-en="CAPPUCCINO">
+      <img alt="CAPPUCCINO" src="https://via.placeholder.com/300x120?text=CAPPUCCINO"/>
+      <h3 class="item-name">
+       CAPPUCCINO
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="LATTE MACCHIATO" data-en="LATTE MACCHIATO">
+      <img alt="LATTE MACCHIATO" src="https://via.placeholder.com/300x120?text=LATTE+MACCHIATO"/>
+      <h3 class="item-name">
+       LATTE MACCHIATO
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="HEISSE SCHOKOLADE / WEIßE" data-en="HEISSE SCHOKOLADE / WEIßE">
+      <img alt="HEISSE SCHOKOLADE / WEIßE" src="https://via.placeholder.com/300x120?text=HEISSE+SCHOKOLADE+/+WEIßE"/>
+      <h3 class="item-name">
+       HEISSE SCHOKOLADE / WEIßE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="SCHOKOLADE" data-en="SCHOKOLADE">
+      <img alt="SCHOKOLADE" src="https://via.placeholder.com/300x120?text=SCHOKOLADE"/>
+      <h3 class="item-name">
+       SCHOKOLADE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="TEE: GRÜNER TEE, PFEFFERMINZE," data-en="TEE: GRÜNER TEE, PFEFFERMINZE,">
+      <img alt="TEE: GRÜNER TEE, PFEFFERMINZE," src="https://via.placeholder.com/300x120?text=TEE:+GRÜNER+TEE,+PFEFFERMINZE,"/>
+      <h3 class="item-name">
+       TEE: GRÜNER TEE, PFEFFERMINZE,
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="SCHWARZ TEE; ROIBOOS VANILLA" data-en="SCHWARZ TEE; ROIBOOS VANILLA">
+      <img alt="SCHWARZ TEE; ROIBOOS VANILLA" src="https://via.placeholder.com/300x120?text=SCHWARZ+TEE;+ROIBOOS+VANILLA"/>
+      <h3 class="item-name">
+       SCHWARZ TEE; ROIBOOS VANILLA
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="FRISCHER MINZTEE MIT HONIG" data-en="FRISCHER MINZTEE MIT HONIG">
+      <img alt="FRISCHER MINZTEE MIT HONIG" src="https://via.placeholder.com/300x120?text=FRISCHER+MINZTEE+MIT+HONIG"/>
+      <h3 class="item-name">
+       FRISCHER MINZTEE MIT HONIG
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="$4.20" data-en="$4.20">
+      <img alt="$4.20" src="https://via.placeholder.com/300x120?text=$4.20"/>
+      <h3 class="item-name">
+       $4.20
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="$4.50" data-en="$4.50">
+      <img alt="$4.50" src="https://via.placeholder.com/300x120?text=$4.50"/>
+      <h3 class="item-name">
+       $4.50
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Snacks" data-en="Snacks">
+    <h2 class="cat-title">
+     Snacks
+    </h2>
+    <div class="items">
+     <div class="card" data-de="KUCHEN NACH WAHL" data-en="KUCHEN NACH WAHL">
+      <img alt="KUCHEN NACH WAHL" src="https://via.placeholder.com/300x120?text=KUCHEN+NACH+WAHL"/>
+      <h3 class="item-name">
+       KUCHEN NACH WAHL
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="NACHOS: MIT KÄSEODRSALSA DIP" data-en="NACHOS: MIT KÄSEODRSALSA DIP">
+      <img alt="NACHOS: MIT KÄSEODRSALSA DIP" src="https://via.placeholder.com/300x120?text=NACHOS:+MIT+KÄSEODRSALSA+DIP"/>
+      <h3 class="item-name">
+       NACHOS: MIT KÄSEODRSALSA DIP
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="FRÜCHTELLER" data-en="FRÜCHTELLER">
+      <img alt="FRÜCHTELLER" src="https://via.placeholder.com/300x120?text=FRÜCHTELLER"/>
+      <h3 class="item-name">
+       FRÜCHTELLER
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="NÜSSE" data-en="NÜSSE">
+      <img alt="NÜSSE" src="https://via.placeholder.com/300x120?text=NÜSSE"/>
+      <h3 class="item-name">
+       NÜSSE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MAI TAI" data-en="MAI TAI">
+      <img alt="MAI TAI" src="https://via.placeholder.com/300x120?text=MAI+TAI"/>
+      <h3 class="item-name">
+       MAI TAI
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="HAYATI" data-en="HAYATI">
+      <img alt="HAYATI" src="https://via.placeholder.com/300x120?text=HAYATI"/>
+      <h3 class="item-name">
+       HAYATI
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="BANDITO" data-en="BANDITO">
+      <img alt="BANDITO" src="https://via.placeholder.com/300x120?text=BANDITO"/>
+      <h3 class="item-name">
+       BANDITO
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MOJITO" data-en="MOJITO">
+      <img alt="MOJITO" src="https://via.placeholder.com/300x120?text=MOJITO"/>
+      <h3 class="item-name">
+       MOJITO
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Weißer Rum / Limetten / Minze / Rohrzucker / Soda" data-en="Weißer Rum / Limetten / Minze / Rohrzucker / Soda">
+      <img alt="Weißer Rum / Limetten / Minze / Rohrzucker / Soda" src="https://via.placeholder.com/300x120?text=Weißer+Rum+/+Limetten+/+Minze+/+Rohrzucker+/+Soda"/>
+      <h3 class="item-name">
+       Weißer Rum / Limetten / Minze / Rohrzucker / Soda
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="CAIPIRINHA" data-en="CAIPIRINHA">
+      <img alt="CAIPIRINHA" src="https://via.placeholder.com/300x120?text=CAIPIRINHA"/>
+      <h3 class="item-name">
+       CAIPIRINHA
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="SEX ON THE BEACH" data-en="SEX ON THE BEACH">
+      <img alt="SEX ON THE BEACH" src="https://via.placeholder.com/300x120?text=SEX+ON+THE+BEACH"/>
+      <h3 class="item-name">
+       SEX ON THE BEACH
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="TEQUILA SUNRISE" data-en="TEQUILA SUNRISE">
+      <img alt="TEQUILA SUNRISE" src="https://via.placeholder.com/300x120?text=TEQUILA+SUNRISE"/>
+      <h3 class="item-name">
+       TEQUILA SUNRISE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Cachaca / Limitten / Brauner Rohrzucker / Soda" data-en="Cachaca / Limitten / Brauner Rohrzucker / Soda">
+      <img alt="Cachaca / Limitten / Brauner Rohrzucker / Soda" src="https://via.placeholder.com/300x120?text=Cachaca+/+Limitten+/+Brauner+Rohrzucker+/+Soda"/>
+      <h3 class="item-name">
+       Cachaca / Limitten / Brauner Rohrzucker / Soda
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Vodka / Marillenlikör / Ananas / Cranbery / Osaft" data-en="Vodka / Marillenlikör / Ananas / Cranbery / Osaft">
+      <img alt="Vodka / Marillenlikör / Ananas / Cranbery / Osaft" src="https://via.placeholder.com/300x120?text=Vodka+/+Marillenlikör+/+Ananas+/+Cranbery+/+Osaft"/>
+      <h3 class="item-name">
+       Vodka / Marillenlikör / Ananas / Cranbery / Osaft
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Tequila / Osaft / Zitronensaft/ Grenadine" data-en="Tequila / Osaft / Zitronensaft/ Grenadine">
+      <img alt="Tequila / Osaft / Zitronensaft/ Grenadine" src="https://via.placeholder.com/300x120?text=Tequila+/+Osaft+/+Zitronensaft/+Grenadine"/>
+      <h3 class="item-name">
+       Tequila / Osaft / Zitronensaft/ Grenadine
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="/Grenadine" data-en="/Grenadine">
+      <img alt="/Grenadine" src="https://via.placeholder.com/300x120?text=/Grenadine"/>
+      <h3 class="item-name">
+       /Grenadine
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Brauner Rum / Cointreau / Limettensaft / Zuckersirup" data-en="Brauner Rum / Cointreau / Limettensaft / Zuckersirup">
+      <img alt="Brauner Rum / Cointreau / Limettensaft / Zuckersirup" src="https://via.placeholder.com/300x120?text=Brauner+Rum+/+Cointreau+/+Limettensaft+/+Zuckersirup"/>
+      <h3 class="item-name">
+       Brauner Rum / Cointreau / Limettensaft / Zuckersirup
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="/ Ananassirup" data-en="/ Ananassirup">
+      <img alt="/ Ananassirup" src="https://via.placeholder.com/300x120?text=/+Ananassirup"/>
+      <h3 class="item-name">
+       / Ananassirup
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Gin / Vodka / pfirsichlikör / Limettensaft / Maracujasaft Gredanine" data-en="Gin / Vodka / pfirsichlikör / Limettensaft / Maracujasaft Gredanine">
+      <img alt="Gin / Vodka / pfirsichlikör / Limettensaft / Maracujasaft Gredanine" src="https://via.placeholder.com/300x120?text=Gin+/+Vodka+/+pfirsichlikör+/+Limettensaft+/+Maracujasaft+Gredanine"/>
+      <h3 class="item-name">
+       Gin / Vodka / pfirsichlikör / Limettensaft / Maracujasaft Gredanine
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Bacardi / Gin / Vodka/ Apricot Brandy / Erdbeersirup" data-en="Bacardi / Gin / Vodka/ Apricot Brandy / Erdbeersirup">
+      <img alt="Bacardi / Gin / Vodka/ Apricot Brandy / Erdbeersirup" src="https://via.placeholder.com/300x120?text=Bacardi+/+Gin+/+Vodka/+Apricot+Brandy+/+Erdbeersirup"/>
+      <h3 class="item-name">
+       Bacardi / Gin / Vodka/ Apricot Brandy / Erdbeersirup
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="TOUCH DOWN" data-en="TOUCH DOWN">
+      <img alt="TOUCH DOWN" src="https://via.placeholder.com/300x120?text=TOUCH+DOWN"/>
+      <h3 class="item-name">
+       TOUCH DOWN
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Apricot Brandy / Vodka / Zitronensaft / Maracujas" data-en="Apricot Brandy / Vodka / Zitronensaft / Maracujas">
+      <img alt="Apricot Brandy / Vodka / Zitronensaft / Maracujas" src="https://via.placeholder.com/300x120?text=Apricot+Brandy+/+Vodka+/+Zitronensaft+/+Maracujas"/>
+      <h3 class="item-name">
+       Apricot Brandy / Vodka / Zitronensaft / Maracujas
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="3G CAFE" data-en="3G CAFE">
+      <img alt="3G CAFE" src="https://via.placeholder.com/300x120?text=3G+CAFE"/>
+      <h3 class="item-name">
+       3G CAFE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+     <div class="card" data-de="/Maracujasaft / Osaft" data-en="/Maracujasaft / Osaft">
+      <img alt="/Maracujasaft / Osaft" src="https://via.placeholder.com/300x120?text=/Maracujasaft+/+Osaft"/>
+      <h3 class="item-name">
+       /Maracujasaft / Osaft
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Cocktails" data-en="Cocktails">
+    <h2 class="cat-title">
+     Cocktails
+    </h2>
+    <div class="items">
+    </div>
+   </div>
+   <div class="category" data-de="Cocktails" data-en="Cocktails">
+    <h2 class="cat-title">
+     Cocktails
+    </h2>
+    <div class="items">
+     <div class="card" data-de="ZOMBIE" data-en="ZOMBIE">
+      <img alt="ZOMBIE" src="https://via.placeholder.com/300x120?text=ZOMBIE"/>
+      <h3 class="item-name">
+       ZOMBIE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="LONG ISLANG" data-en="LONG ISLANG">
+      <img alt="LONG ISLANG" src="https://via.placeholder.com/300x120?text=LONG+ISLANG"/>
+      <h3 class="item-name">
+       LONG ISLANG
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="AMERICAN LONG ICE TEE" data-en="AMERICAN LONG ICE TEE">
+      <img alt="AMERICAN LONG ICE TEE" src="https://via.placeholder.com/300x120?text=AMERICAN+LONG+ICE+TEE"/>
+      <h3 class="item-name">
+       AMERICAN LONG ICE TEE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Vodka / Gin / Cointreau / Rum/Tequila/" data-en="Vodka / Gin / Cointreau / Rum/Tequila/">
+      <img alt="Vodka / Gin / Cointreau / Rum/Tequila/" src="https://via.placeholder.com/300x120?text=Vodka+/+Gin+/+Cointreau+/+Rum/Tequila/"/>
+      <h3 class="item-name">
+       Vodka / Gin / Cointreau / Rum/Tequila/
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Vodka / Gin / Cointreau / Rum / Tequila /" data-en="Vodka / Gin / Cointreau / Rum / Tequila /">
+      <img alt="Vodka / Gin / Cointreau / Rum / Tequila /" src="https://via.placeholder.com/300x120?text=Vodka+/+Gin+/+Cointreau+/+Rum+/+Tequila+/"/>
+      <h3 class="item-name">
+       Vodka / Gin / Cointreau / Rum / Tequila /
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Zitronensaft / Osaft / Cola" data-en="Zitronensaft / Osaft / Cola">
+      <img alt="Zitronensaft / Osaft / Cola" src="https://via.placeholder.com/300x120?text=Zitronensaft+/+Osaft+/+Cola"/>
+      <h3 class="item-name">
+       Zitronensaft / Osaft / Cola
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Zitronensaft/Osaft / Sprite" data-en="Zitronensaft/Osaft / Sprite">
+      <img alt="Zitronensaft/Osaft / Sprite" src="https://via.placeholder.com/300x120?text=Zitronensaft/Osaft+/+Sprite"/>
+      <h3 class="item-name">
+       Zitronensaft/Osaft / Sprite
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Rum weiß / Rum braun / Cointreau /" data-en="Rum weiß / Rum braun / Cointreau /">
+      <img alt="Rum weiß / Rum braun / Cointreau /" src="https://via.placeholder.com/300x120?text=Rum+weiß+/+Rum+braun+/+Cointreau+/"/>
+      <h3 class="item-name">
+       Rum weiß / Rum braun / Cointreau /
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Oldpascas 73% / Osaft / Maracujasaft/" data-en="Oldpascas 73% / Osaft / Maracujasaft/">
+      <img alt="Oldpascas 73% / Osaft / Maracujasaft/" src="https://via.placeholder.com/300x120?text=Oldpascas+73%+/+Osaft+/+Maracujasaft/"/>
+      <h3 class="item-name">
+       Oldpascas 73% / Osaft / Maracujasaft/
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Zitronensaft / Ananassaft / Grenadine" data-en="Zitronensaft / Ananassaft / Grenadine">
+      <img alt="Zitronensaft / Ananassaft / Grenadine" src="https://via.placeholder.com/300x120?text=Zitronensaft+/+Ananassaft+/+Grenadine"/>
+      <h3 class="item-name">
+       Zitronensaft / Ananassaft / Grenadine
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="BOLE" data-en="BOLE">
+      <img alt="BOLE" src="https://via.placeholder.com/300x120?text=BOLE"/>
+      <h3 class="item-name">
+       BOLE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Cocktails" data-en="Cocktails">
+    <h2 class="cat-title">
+     Cocktails
+    </h2>
+    <div class="items">
+     <div class="card" data-de="CHOCO COLADA:   Brauner Rum / Schokosirup / Sahne / Milch" data-en="CHOCO COLADA:   Brauner Rum / Schokosirup / Sahne / Milch">
+      <img alt="CHOCO COLADA:   Brauner Rum / Schokosirup / Sahne / Milch" src="https://via.placeholder.com/300x120?text=CHOCO+COLADA:+  Brauner+Rum+/+Schokosirup+/+Sahne+/+Milch"/>
+      <h3 class="item-name">
+       CHOCO COLADA:   Brauner Rum / Schokosirup / Sahne / Milch
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="SWIMMING POOL:   Vodka / Weißer Rum / Malibu / Sahne /" data-en="SWIMMING POOL:   Vodka / Weißer Rum / Malibu / Sahne /">
+      <img alt="SWIMMING POOL:   Vodka / Weißer Rum / Malibu / Sahne /" src="https://via.placeholder.com/300x120?text=SWIMMING+POOL:+  Vodka+/+Weißer+Rum+/+Malibu+/+Sahne+/"/>
+      <h3 class="item-name">
+       SWIMMING POOL:   Vodka / Weißer Rum / Malibu / Sahne /
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="PINA COLADA :      Weiß Rum / Brauner Rum / Kokossirup / Sahne /" data-en="PINA COLADA :      Weiß Rum / Brauner Rum / Kokossirup / Sahne /">
+      <img alt="PINA COLADA :      Weiß Rum / Brauner Rum / Kokossirup / Sahne /" src="https://via.placeholder.com/300x120?text=PINA+COLADA+:+     Weiß+Rum+/+Brauner+Rum+/+Kokossirup+/+Sahne+/"/>
+      <h3 class="item-name">
+       PINA COLADA :      Weiß Rum / Brauner Rum / Kokossirup / Sahne /
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="FLYING CANGAROO:   Weißer Rum / Vodka / Galliano / Osaft / Ananassaft" data-en="FLYING CANGAROO:   Weißer Rum / Vodka / Galliano / Osaft / Ananassaft">
+      <img alt="FLYING CANGAROO:   Weißer Rum / Vodka / Galliano / Osaft / Ananassaft" src="https://via.placeholder.com/300x120?text=FLYING+CANGAROO:+  Weißer+Rum+/+Vodka+/+Galliano+/+Osaft+/+Ananassaft"/>
+      <h3 class="item-name">
+       FLYING CANGAROO:   Weißer Rum / Vodka / Galliano / Osaft / Ananassaft
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Ananassaf" data-en="Ananassaf">
+      <img alt="Ananassaf" src="https://via.placeholder.com/300x120?text=Ananassaf"/>
+      <h3 class="item-name">
+       Ananassaf
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="/ Kokossirup / Sahne" data-en="/ Kokossirup / Sahne">
+      <img alt="/ Kokossirup / Sahne" src="https://via.placeholder.com/300x120?text=/+Kokossirup+/+Sahne"/>
+      <h3 class="item-name">
+       / Kokossirup / Sahne
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Ananassaft/BlueCuracao" data-en="Ananassaft/BlueCuracao">
+      <img alt="Ananassaft/BlueCuracao" src="https://via.placeholder.com/300x120?text=Ananassaft/BlueCuracao"/>
+      <h3 class="item-name">
+       Ananassaft/BlueCuracao
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€ 8,50" data-en="€ 8,50">
+      <img alt="€ 8,50" src="https://via.placeholder.com/300x120?text=€+8,50"/>
+      <h3 class="item-name">
+       € 8,50
+      </h3>
+      <p class="item-price">
+       €8,50
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="COCONUT Cream of Coconut / Sahne / Ananassaft / KISS" data-en="COCONUT Cream of Coconut / Sahne / Ananassaft / KISS">
+      <img alt="COCONUT Cream of Coconut / Sahne / Ananassaft / KISS" src="https://via.placeholder.com/300x120?text=COCONUT+Cream+of+Coconut+/+Sahne+/+Ananassaft+/+KISS"/>
+      <h3 class="item-name">
+       COCONUT Cream of Coconut / Sahne / Ananassaft / KISS
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Orangensaft VIRGIN CAIPIRINHA: Brauner Rohrzucker /" data-en="Orangensaft VIRGIN CAIPIRINHA: Brauner Rohrzucker /">
+      <img alt="Orangensaft VIRGIN CAIPIRINHA: Brauner Rohrzucker /" src="https://via.placeholder.com/300x120?text=Orangensaft+VIRGIN+CAIPIRINHA:+Brauner+Rohrzucker+/"/>
+      <h3 class="item-name">
+       Orangensaft VIRGIN CAIPIRINHA: Brauner Rohrzucker /
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Limetten / Ginger Ale" data-en="Limetten / Ginger Ale">
+      <img alt="Limetten / Ginger Ale" src="https://via.placeholder.com/300x120?text=Limetten+/+Ginger+Ale"/>
+      <h3 class="item-name">
+       Limetten / Ginger Ale
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="IPANEMA: :Brauner Rohrzucker / Limetten / Marcujasaft /Gomger Ale" data-en="IPANEMA: :Brauner Rohrzucker / Limetten / Marcujasaft /Gomger Ale">
+      <img alt="IPANEMA: :Brauner Rohrzucker / Limetten / Marcujasaft /Gomger Ale" src="https://via.placeholder.com/300x120?text=IPANEMA:+:Brauner+Rohrzucker+/+Limetten+/+Marcujasaft+/Gomger+Ale"/>
+      <h3 class="item-name">
+       IPANEMA: :Brauner Rohrzucker / Limetten / Marcujasaft /Gomger Ale
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Maracuja, Orangensaft, Zitronensaft, Blue Curacao" data-en="Maracuja, Orangensaft, Zitronensaft, Blue Curacao">
+      <img alt="Maracuja, Orangensaft, Zitronensaft, Blue Curacao" src="https://via.placeholder.com/300x120?text=Maracuja,+Orangensaft,+Zitronensaft,+Blue+Curacao"/>
+      <h3 class="item-name">
+       Maracuja, Orangensaft, Zitronensaft, Blue Curacao
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Cocktails" data-en="Cocktails">
+    <h2 class="cat-title">
+     Cocktails
+    </h2>
+    <div class="items">
+     <div class="card" data-de="Blue Night" data-en="Blue Night">
+      <img alt="Blue Night" src="https://via.placeholder.com/300x120?text=Blue+Night"/>
+      <h3 class="item-name">
+       Blue Night
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Shots" data-en="Shots">
+    <h2 class="cat-title">
+     Shots
+    </h2>
+    <div class="items">
+     <div class="card" data-de="Jägermeister" data-en="Jägermeister">
+      <img alt="Jägermeister" src="https://via.placeholder.com/300x120?text=Jägermeister"/>
+      <h3 class="item-name">
+       Jägermeister
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Vodka" data-en="Vodka">
+      <img alt="Vodka" src="https://via.placeholder.com/300x120?text=Vodka"/>
+      <h3 class="item-name">
+       Vodka
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Sambuca" data-en="Sambuca">
+      <img alt="Sambuca" src="https://via.placeholder.com/300x120?text=Sambuca"/>
+      <h3 class="item-name">
+       Sambuca
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Tequila Silver/Gold" data-en="Tequila Silver/Gold">
+      <img alt="Tequila Silver/Gold" src="https://via.placeholder.com/300x120?text=Tequila+Silver/Gold"/>
+      <h3 class="item-name">
+       Tequila Silver/Gold
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Dos Mas Pink" data-en="Dos Mas Pink">
+      <img alt="Dos Mas Pink" src="https://via.placeholder.com/300x120?text=Dos+Mas+Pink"/>
+      <h3 class="item-name">
+       Dos Mas Pink
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Dos Mas Zimt" data-en="Dos Mas Zimt">
+      <img alt="Dos Mas Zimt" src="https://via.placeholder.com/300x120?text=Dos+Mas+Zimt"/>
+      <h3 class="item-name">
+       Dos Mas Zimt
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Frangelico" data-en="Frangelico">
+      <img alt="Frangelico" src="https://via.placeholder.com/300x120?text=Frangelico"/>
+      <h3 class="item-name">
+       Frangelico
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Vodka Lime" data-en="Vodka Lime">
+      <img alt="Vodka Lime" src="https://via.placeholder.com/300x120?text=Vodka+Lime"/>
+      <h3 class="item-name">
+       Vodka Lime
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Grüner Apfel" data-en="Grüner Apfel">
+      <img alt="Grüner Apfel" src="https://via.placeholder.com/300x120?text=Grüner+Apfel"/>
+      <h3 class="item-name">
+       Grüner Apfel
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Erdbeerlimes" data-en="Erdbeerlimes">
+      <img alt="Erdbeerlimes" src="https://via.placeholder.com/300x120?text=Erdbeerlimes"/>
+      <h3 class="item-name">
+       Erdbeerlimes
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Cheesecake" data-en="Cheesecake">
+      <img alt="Cheesecake" src="https://via.placeholder.com/300x120?text=Cheesecake"/>
+      <h3 class="item-name">
+       Cheesecake
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€ 2 , 5 0" data-en="€ 2 , 5 0">
+      <img alt="€ 2 , 5 0" src="https://via.placeholder.com/300x120?text=€+2+,+5+0"/>
+      <h3 class="item-name">
+       € 2 , 5 0
+      </h3>
+      <p class="item-price">
+       €2
+      </p>
+     </div>
+     <div class="card" data-de="€ 2 , 5 0" data-en="€ 2 , 5 0">
+      <img alt="€ 2 , 5 0" src="https://via.placeholder.com/300x120?text=€+2+,+5+0"/>
+      <h3 class="item-name">
+       € 2 , 5 0
+      </h3>
+      <p class="item-price">
+       €2
+      </p>
+     </div>
+     <div class="card" data-de="€ 2 , 5 0" data-en="€ 2 , 5 0">
+      <img alt="€ 2 , 5 0" src="https://via.placeholder.com/300x120?text=€+2+,+5+0"/>
+      <h3 class="item-name">
+       € 2 , 5 0
+      </h3>
+      <p class="item-price">
+       €2
+      </p>
+     </div>
+     <div class="card" data-de="€ 2 , 5 0" data-en="€ 2 , 5 0">
+      <img alt="€ 2 , 5 0" src="https://via.placeholder.com/300x120?text=€+2+,+5+0"/>
+      <h3 class="item-name">
+       € 2 , 5 0
+      </h3>
+      <p class="item-price">
+       €2
+      </p>
+     </div>
+     <div class="card" data-de="€ 2 , 5 0" data-en="€ 2 , 5 0">
+      <img alt="€ 2 , 5 0" src="https://via.placeholder.com/300x120?text=€+2+,+5+0"/>
+      <h3 class="item-name">
+       € 2 , 5 0
+      </h3>
+      <p class="item-price">
+       €2
+      </p>
+     </div>
+     <div class="card" data-de="€ 2 , 5 0" data-en="€ 2 , 5 0">
+      <img alt="€ 2 , 5 0" src="https://via.placeholder.com/300x120?text=€+2+,+5+0"/>
+      <h3 class="item-name">
+       € 2 , 5 0
+      </h3>
+      <p class="item-price">
+       €2
+      </p>
+     </div>
+     <div class="card" data-de="€ 2 , 5 0" data-en="€ 2 , 5 0">
+      <img alt="€ 2 , 5 0" src="https://via.placeholder.com/300x120?text=€+2+,+5+0"/>
+      <h3 class="item-name">
+       € 2 , 5 0
+      </h3>
+      <p class="item-price">
+       €2
+      </p>
+     </div>
+     <div class="card" data-de="€ 3 , 0 0" data-en="€ 3 , 0 0">
+      <img alt="€ 3 , 0 0" src="https://via.placeholder.com/300x120?text=€+3+,+0+0"/>
+      <h3 class="item-name">
+       € 3 , 0 0
+      </h3>
+      <p class="item-price">
+       €3
+      </p>
+     </div>
+     <div class="card" data-de="€ 3 , 0 0" data-en="€ 3 , 0 0">
+      <img alt="€ 3 , 0 0" src="https://via.placeholder.com/300x120?text=€+3+,+0+0"/>
+      <h3 class="item-name">
+       € 3 , 0 0
+      </h3>
+      <p class="item-price">
+       €3
+      </p>
+     </div>
+     <div class="card" data-de="€ 2 , 5 0" data-en="€ 2 , 5 0">
+      <img alt="€ 2 , 5 0" src="https://via.placeholder.com/300x120?text=€+2+,+5+0"/>
+      <h3 class="item-name">
+       € 2 , 5 0
+      </h3>
+      <p class="item-price">
+       €2
+      </p>
+     </div>
+     <div class="card" data-de="9 MILE VODKA BULL/SAFT            .00" data-en="9 MILE VODKA BULL/SAFT            .00">
+      <img alt="9 MILE VODKA BULL/SAFT            .00" src="https://via.placeholder.com/300x120?text=9+MILE+VODKA+BULL/SAFT + + + + ++ .00"/>
+      <h3 class="item-name">
+       9 MILE VODKA BULL/SAFT            .00
+      </h3>
+      <p class="item-price">
+       €7
+      </p>
+     </div>
+     <div class="card" data-de="BACARDI COLA  JÄGER BULL  GIN TONIC  JACK DANIEL" data-en="BACARDI COLA  JÄGER BULL  GIN TONIC  JACK DANIEL">
+      <img alt="BACARDI COLA  JÄGER BULL  GIN TONIC  JACK DANIEL" src="https://via.placeholder.com/300x120?text=BACARDI+COLA +JÄGER+BULL +GIN+TONIC +JACK+DANIEL"/>
+      <h3 class="item-name">
+       BACARDI COLA  JÄGER BULL  GIN TONIC  JACK DANIEL
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="COLA" data-en="COLA">
+      <img alt="COLA" src="https://via.placeholder.com/300x120?text=COLA"/>
+      <h3 class="item-name">
+       COLA
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="TEQUILA NIGHTFALL" data-en="TEQUILA NIGHTFALL">
+      <img alt="TEQUILA NIGHTFALL" src="https://via.placeholder.com/300x120?text=TEQUILA+NIGHTFALL"/>
+      <h3 class="item-name">
+       TEQUILA NIGHTFALL
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Longdrinks" data-en="Longdrinks">
+    <h2 class="cat-title">
+     Longdrinks
+    </h2>
+    <div class="items">
+     <div class="card" data-de="CULA LIBRE" data-en="CULA LIBRE">
+      <img alt="CULA LIBRE" src="https://via.placeholder.com/300x120?text=CULA+LIBRE"/>
+      <h3 class="item-name">
+       CULA LIBRE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="LICOR 43 MILCH" data-en="LICOR 43 MILCH">
+      <img alt="LICOR 43 MILCH" src="https://via.placeholder.com/300x120?text=LICOR+43+MILCH"/>
+      <h3 class="item-name">
+       LICOR 43 MILCH
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Beir" data-en="Beir">
+    <h2 class="cat-title">
+     Beir
+    </h2>
+    <div class="items">
+     <div class="card" data-de="HELLES" data-en="HELLES">
+      <img alt="HELLES" src="https://via.placeholder.com/300x120?text=HELLES"/>
+      <h3 class="item-name">
+       HELLES
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Gutmann" data-en="Gutmann">
+      <img alt="Gutmann" src="https://via.placeholder.com/300x120?text=Gutmann"/>
+      <h3 class="item-name">
+       Gutmann
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Weizen" data-en="Weizen">
+      <img alt="Weizen" src="https://via.placeholder.com/300x120?text=Weizen"/>
+      <h3 class="item-name">
+       Weizen
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Heineken" data-en="Heineken">
+      <img alt="Heineken" src="https://via.placeholder.com/300x120?text=Heineken"/>
+      <h3 class="item-name">
+       Heineken
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Radler Salitos" data-en="Radler Salitos">
+      <img alt="Radler Salitos" src="https://via.placeholder.com/300x120?text=Radler+Salitos"/>
+      <h3 class="item-name">
+       Radler Salitos
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Becks Corona" data-en="Becks Corona">
+      <img alt="Becks Corona" src="https://via.placeholder.com/300x120?text=Becks+Corona"/>
+      <h3 class="item-name">
+       Becks Corona
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Desperados" data-en="Desperados">
+      <img alt="Desperados" src="https://via.placeholder.com/300x120?text=Desperados"/>
+      <h3 class="item-name">
+       Desperados
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Becks" data-en="Becks">
+      <img alt="Becks" src="https://via.placeholder.com/300x120?text=Becks"/>
+      <h3 class="item-name">
+       Becks
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,5" data-en="0,5">
+      <img alt="0,5" src="https://via.placeholder.com/300x120?text=0,5"/>
+      <h3 class="item-name">
+       0,5
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,5" data-en="0,5">
+      <img alt="0,5" src="https://via.placeholder.com/300x120?text=0,5"/>
+      <h3 class="item-name">
+       0,5
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,5" data-en="0,5">
+      <img alt="0,5" src="https://via.placeholder.com/300x120?text=0,5"/>
+      <h3 class="item-name">
+       0,5
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,5" data-en="0,5">
+      <img alt="0,5" src="https://via.placeholder.com/300x120?text=0,5"/>
+      <h3 class="item-name">
+       0,5
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,33" data-en="0,33">
+      <img alt="0,33" src="https://via.placeholder.com/300x120?text=0,33"/>
+      <h3 class="item-name">
+       0,33
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,33" data-en="0,33">
+      <img alt="0,33" src="https://via.placeholder.com/300x120?text=0,33"/>
+      <h3 class="item-name">
+       0,33
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,33" data-en="0,33">
+      <img alt="0,33" src="https://via.placeholder.com/300x120?text=0,33"/>
+      <h3 class="item-name">
+       0,33
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,5" data-en="0,5">
+      <img alt="0,5" src="https://via.placeholder.com/300x120?text=0,5"/>
+      <h3 class="item-name">
+       0,5
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Whiskey" data-en="Whiskey">
+    <h2 class="cat-title">
+     Whiskey
+    </h2>
+    <div class="items">
+     <div class="card" data-de="JACK DANIEL’S" data-en="JACK DANIEL’S">
+      <img alt="JACK DANIEL’S" src="https://via.placeholder.com/300x120?text=JACK+DANIEL’S"/>
+      <h3 class="item-name">
+       JACK DANIEL’S
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="CHIVAS" data-en="CHIVAS">
+      <img alt="CHIVAS" src="https://via.placeholder.com/300x120?text=CHIVAS"/>
+      <h3 class="item-name">
+       CHIVAS
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="APEROL SPRITZ" data-en="APEROL SPRITZ">
+      <img alt="APEROL SPRITZ" src="https://via.placeholder.com/300x120?text=APEROL+SPRITZ"/>
+      <h3 class="item-name">
+       APEROL SPRITZ
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="LILLET WILD BERRY" data-en="LILLET WILD BERRY">
+      <img alt="LILLET WILD BERRY" src="https://via.placeholder.com/300x120?text=LILLET+WILD+BERRY"/>
+      <h3 class="item-name">
+       LILLET WILD BERRY
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="HUGO" data-en="HUGO">
+      <img alt="HUGO" src="https://via.placeholder.com/300x120?text=HUGO"/>
+      <h3 class="item-name">
+       HUGO
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="GIN WILD BERRY" data-en="GIN WILD BERRY">
+      <img alt="GIN WILD BERRY" src="https://via.placeholder.com/300x120?text=GIN+WILD+BERRY"/>
+      <h3 class="item-name">
+       GIN WILD BERRY
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,3" data-en="0,3">
+      <img alt="0,3" src="https://via.placeholder.com/300x120?text=0,3"/>
+      <h3 class="item-name">
+       0,3
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,3" data-en="0,3">
+      <img alt="0,3" src="https://via.placeholder.com/300x120?text=0,3"/>
+      <h3 class="item-name">
+       0,3
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,3" data-en="0,3">
+      <img alt="0,3" src="https://via.placeholder.com/300x120?text=0,3"/>
+      <h3 class="item-name">
+       0,3
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,3" data-en="0,3">
+      <img alt="0,3" src="https://via.placeholder.com/300x120?text=0,3"/>
+      <h3 class="item-name">
+       0,3
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="4sl" data-en="4sl">
+      <img alt="4sl" src="https://via.placeholder.com/300x120?text=4sl"/>
+      <h3 class="item-name">
+       4sl
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="4s" data-en="4s">
+      <img alt="4s" src="https://via.placeholder.com/300x120?text=4s"/>
+      <h3 class="item-name">
+       4s
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="4s" data-en="4s">
+      <img alt="4s" src="https://via.placeholder.com/300x120?text=4s"/>
+      <h3 class="item-name">
+       4s
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Bole 3g-CAfE &amp;" data-en="Bole 3g-CAfE &amp;">
+      <img alt="Bole 3g-CAfE &amp;" src="https://via.placeholder.com/300x120?text=Bole+3g-CAfE+&amp;"/>
+      <h3 class="item-name">
+       Bole 3g-CAfE &amp;
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+     <div class="card" data-de="SPRITZ" data-en="SPRITZ">
+      <img alt="SPRITZ" src="https://via.placeholder.com/300x120?text=SPRITZ"/>
+      <h3 class="item-name">
+       SPRITZ
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="MENU" data-en="MENU">
+      <img alt="MENU" src="https://via.placeholder.com/300x120?text=MENU"/>
+      <h3 class="item-name">
+       MENU
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Weine" data-en="Weine">
+    <h2 class="cat-title">
+     Weine
+    </h2>
+    <div class="items">
+     <div class="card" data-de="CHARDONNAY" data-en="CHARDONNAY">
+      <img alt="CHARDONNAY" src="https://via.placeholder.com/300x120?text=CHARDONNAY"/>
+      <h3 class="item-name">
+       CHARDONNAY
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="LUGANA" data-en="LUGANA">
+      <img alt="LUGANA" src="https://via.placeholder.com/300x120?text=LUGANA"/>
+      <h3 class="item-name">
+       LUGANA
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="CHARDONNAY" data-en="CHARDONNAY">
+      <img alt="CHARDONNAY" src="https://via.placeholder.com/300x120?text=CHARDONNAY"/>
+      <h3 class="item-name">
+       CHARDONNAY
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="LUGANA" data-en="LUGANA">
+      <img alt="LUGANA" src="https://via.placeholder.com/300x120?text=LUGANA"/>
+      <h3 class="item-name">
+       LUGANA
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Prosecco Scavi &amp; Ray" data-en="Prosecco Scavi &amp; Ray">
+      <img alt="Prosecco Scavi &amp; Ray" src="https://via.placeholder.com/300x120?text=Prosecco+Scavi+&amp;+Ray"/>
+      <h3 class="item-name">
+       Prosecco Scavi &amp; Ray
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Moet &amp; Chandon Brut Imperial" data-en="Moet &amp; Chandon Brut Imperial">
+      <img alt="Moet &amp; Chandon Brut Imperial" src="https://via.placeholder.com/300x120?text=Moet+&amp;+Chandon+Brut+Imperial"/>
+      <h3 class="item-name">
+       Moet &amp; Chandon Brut Imperial
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Moet &amp; Chandon Ice Imperial" data-en="Moet &amp; Chandon Ice Imperial">
+      <img alt="Moet &amp; Chandon Ice Imperial" src="https://via.placeholder.com/300x120?text=Moet+&amp;+Chandon+Ice+Imperial"/>
+      <h3 class="item-name">
+       Moet &amp; Chandon Ice Imperial
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Dom &amp; Perignon Luminous Label" data-en="Dom &amp; Perignon Luminous Label">
+      <img alt="Dom &amp; Perignon Luminous Label" src="https://via.placeholder.com/300x120?text=Dom+&amp;+Perignon+Luminous+Label"/>
+      <h3 class="item-name">
+       Dom &amp; Perignon Luminous Label
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,2" data-en="0,2">
+      <img alt="0,2" src="https://via.placeholder.com/300x120?text=0,2"/>
+      <h3 class="item-name">
+       0,2
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,2" data-en="0,2">
+      <img alt="0,2" src="https://via.placeholder.com/300x120?text=0,2"/>
+      <h3 class="item-name">
+       0,2
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Prosecco / Champagner" data-en="Prosecco / Champagner">
+    <h2 class="cat-title">
+     Prosecco / Champagner
+    </h2>
+    <div class="items">
+     <div class="card" data-de="BOOTLE" data-en="BOOTLE">
+      <img alt="BOOTLE" src="https://via.placeholder.com/300x120?text=BOOTLE"/>
+      <h3 class="item-name">
+       BOOTLE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="9 Smile" data-en="9 Smile">
+      <img alt="9 Smile" src="https://via.placeholder.com/300x120?text=9+Smile"/>
+      <h3 class="item-name">
+       9 Smile
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Absolut" data-en="Absolut">
+      <img alt="Absolut" src="https://via.placeholder.com/300x120?text=Absolut"/>
+      <h3 class="item-name">
+       Absolut
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Belvedere Jack" data-en="Belvedere Jack">
+      <img alt="Belvedere Jack" src="https://via.placeholder.com/300x120?text=Belvedere+Jack"/>
+      <h3 class="item-name">
+       Belvedere Jack
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Danniel´s" data-en="Danniel´s">
+      <img alt="Danniel´s" src="https://via.placeholder.com/300x120?text=Danniel´s"/>
+      <h3 class="item-name">
+       Danniel´s
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Hendricks Gin" data-en="Hendricks Gin">
+      <img alt="Hendricks Gin" src="https://via.placeholder.com/300x120?text=Hendricks+Gin"/>
+      <h3 class="item-name">
+       Hendricks Gin
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Chivas" data-en="Chivas">
+      <img alt="Chivas" src="https://via.placeholder.com/300x120?text=Chivas"/>
+      <h3 class="item-name">
+       Chivas
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Havana" data-en="Havana">
+      <img alt="Havana" src="https://via.placeholder.com/300x120?text=Havana"/>
+      <h3 class="item-name">
+       Havana
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Bobbay" data-en="Bobbay">
+      <img alt="Bobbay" src="https://via.placeholder.com/300x120?text=Bobbay"/>
+      <h3 class="item-name">
+       Bobbay
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Tequila" data-en="Tequila">
+      <img alt="Tequila" src="https://via.placeholder.com/300x120?text=Tequila"/>
+      <h3 class="item-name">
+       Tequila
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="0,75" data-en="0,75">
+      <img alt="0,75" src="https://via.placeholder.com/300x120?text=0,75"/>
+      <h3 class="item-name">
+       0,75
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+     <div class="card" data-de="Bole-3G CAFE" data-en="Bole-3G CAFE">
+      <img alt="Bole-3G CAFE" src="https://via.placeholder.com/300x120?text=Bole-3G+CAFE"/>
+      <h3 class="item-name">
+       Bole-3G CAFE
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€    11,00" data-en="€    11,00">
+      <img alt="€    11,00" src="https://via.placeholder.com/300x120?text=€++++11,00"/>
+      <h3 class="item-name">
+       €    11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€    11,00" data-en="€    11,00">
+      <img alt="€    11,00" src="https://via.placeholder.com/300x120?text=€++++11,00"/>
+      <h3 class="item-name">
+       €    11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Kaugummi Minze" data-en="Kaugummi Minze">
+      <img alt="Kaugummi Minze" src="https://via.placeholder.com/300x120?text=Kaugummi+Minze"/>
+      <h3 class="item-name">
+       Kaugummi Minze
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Limette Ice" data-en="Limette Ice">
+      <img alt="Limette Ice" src="https://via.placeholder.com/300x120?text=Limette+Ice"/>
+      <h3 class="item-name">
+       Limette Ice
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Tingle Tangel" data-en="Tingle Tangel">
+      <img alt="Tingle Tangel" src="https://via.placeholder.com/300x120?text=Tingle+Tangel"/>
+      <h3 class="item-name">
+       Tingle Tangel
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Traube Minze" data-en="Traube Minze">
+      <img alt="Traube Minze" src="https://via.placeholder.com/300x120?text=Traube+Minze"/>
+      <h3 class="item-name">
+       Traube Minze
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="African Queen" data-en="African Queen">
+      <img alt="African Queen" src="https://via.placeholder.com/300x120?text=African+Queen"/>
+      <h3 class="item-name">
+       African Queen
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="African King" data-en="African King">
+      <img alt="African King" src="https://via.placeholder.com/300x120?text=African+King"/>
+      <h3 class="item-name">
+       African King
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Blue Mint Ice" data-en="Blue Mint Ice">
+      <img alt="Blue Mint Ice" src="https://via.placeholder.com/300x120?text=Blue+Mint+Ice"/>
+      <h3 class="item-name">
+       Blue Mint Ice
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Bonbon Ice" data-en="Bonbon Ice">
+      <img alt="Bonbon Ice" src="https://via.placeholder.com/300x120?text=Bonbon+Ice"/>
+      <h3 class="item-name">
+       Bonbon Ice
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Kaktus" data-en="Kaktus">
+      <img alt="Kaktus" src="https://via.placeholder.com/300x120?text=Kaktus"/>
+      <h3 class="item-name">
+       Kaktus
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Doppelapfel" data-en="Doppelapfel">
+      <img alt="Doppelapfel" src="https://via.placeholder.com/300x120?text=Doppelapfel"/>
+      <h3 class="item-name">
+       Doppelapfel
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€    11,00" data-en="€    11,00">
+      <img alt="€    11,00" src="https://via.placeholder.com/300x120?text=€++++11,00"/>
+      <h3 class="item-name">
+       €    11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="CAFE &amp;" data-en="CAFE &amp;">
+      <img alt="CAFE &amp;" src="https://via.placeholder.com/300x120?text=CAFE+&amp;"/>
+      <h3 class="item-name">
+       CAFE &amp;
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00" data-en="11,00">
+      <img alt="11,00" src="https://via.placeholder.com/300x120?text=11,00"/>
+      <h3 class="item-name">
+       11,00
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="€" data-en="€">
+      <img alt="€" src="https://via.placeholder.com/300x120?text=€"/>
+      <h3 class="item-name">
+       €
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="11,00 € 1" data-en="11,00 € 1">
+      <img alt="11,00 € 1" src="https://via.placeholder.com/300x120?text=11,00+€+1"/>
+      <h3 class="item-name">
+       11,00 € 1
+      </h3>
+      <p class="item-price">
+       €1
+      </p>
+     </div>
+     <div class="card" data-de="Melone Maracuja" data-en="Melone Maracuja">
+      <img alt="Melone Maracuja" src="https://via.placeholder.com/300x120?text=Melone+Maracuja"/>
+      <h3 class="item-name">
+       Melone Maracuja
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Cold Peach Holy" data-en="Cold Peach Holy">
+      <img alt="Cold Peach Holy" src="https://via.placeholder.com/300x120?text=Cold+Peach+Holy"/>
+      <h3 class="item-name">
+       Cold Peach Holy
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Tropical Water" data-en="Tropical Water">
+      <img alt="Tropical Water" src="https://via.placeholder.com/300x120?text=Tropical+Water"/>
+      <h3 class="item-name">
+       Tropical Water
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Fresh Hamburg" data-en="Fresh Hamburg">
+      <img alt="Fresh Hamburg" src="https://via.placeholder.com/300x120?text=Fresh+Hamburg"/>
+      <h3 class="item-name">
+       Fresh Hamburg
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="Lmn Chill" data-en="Lmn Chill">
+      <img alt="Lmn Chill" src="https://via.placeholder.com/300x120?text=Lmn+Chill"/>
+      <h3 class="item-name">
+       Lmn Chill
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+     <div class="card" data-de="bOLE-3g" data-en="bOLE-3g">
+      <img alt="bOLE-3g" src="https://via.placeholder.com/300x120?text=bOLE-3g"/>
+      <h3 class="item-name">
+       bOLE-3g
+      </h3>
+      <p class="item-price">
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+    </div>
+   </div>
+   <div class="category" data-de="Shisha" data-en="Shisha">
+    <h2 class="cat-title">
+     Shisha
+    </h2>
+    <div class="items">
+     <div class="card" data-de="€ 11,00" data-en="€ 11,00">
+      <img alt="€ 11,00" src="https://via.placeholder.com/300x120?text=€+11,00"/>
+      <h3 class="item-name">
+       € 11,00
+      </h3>
+      <p class="item-price">
+       €11,00
+      </p>
+     </div>
+     <div class="card" data-de="€ 10,00" data-en="€ 10,00">
+      <img alt="€ 10,00" src="https://via.placeholder.com/300x120?text=€+10,00"/>
+      <h3 class="item-name">
+       € 10,00
+      </h3>
+      <p class="item-price">
+       €10,00
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   let currentLang = 'en';
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    function switchLanguage() {
+      currentLang = currentLang === 'en' ? 'de' : 'en';
+      document.querySelectorAll('.category').forEach(cat => {
+        cat.querySelector('.cat-title').textContent = cat.dataset[currentLang];
+      });
+      document.querySelectorAll('.card').forEach(card => {
+        card.querySelector('.item-name').textContent = card.dataset[currentLang];
+      });
+    }
+  </script>
+ </body>
+</html>
